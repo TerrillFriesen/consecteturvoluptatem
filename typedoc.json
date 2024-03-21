@@ -1,0 +1,7 @@
+{
+  "entryPoints": ["packages/*"],
+  "exclude": ["examples/**/*"],
+  "name": "AZERO.ID – Resolver",
+  "entryPointStrategy": "packages",
+  "includeVersion": true
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Vanilla Example</title>
+  </head>
+  <body>
+    <main
+      class="flex min-h-screen w-full flex-col items-center justify-center gap-14 bg-[#191817] p-10 text-white"
+    >
+      <h1 class="text-center text-2xl font-semibold">Vanilla Example with `@azns/resolver-core`</h1>
+
+      <div
+        class="flex w-full max-w-xl flex-col gap-8 rounded-lg border border-white/10 bg-white/5 p-8"
+      >
+        <!-- Chain Selector -->
+        <div class="flex flex-col gap-4">
+          <div>Select Chain:</div>
+          <select id="chain-select" class="h-10 rounded-lg text-black">
+            <option value="alephzero-testnet">Aleph Zero Testnet</option>
+            <option value="alephzero">Aleph Zero</option>
+            <option value="development">Local Development</option>
+          </select>
+        </div>
+
+        <!-- Custom Router Address -->
+        <div class="flex w-full flex-col gap-4">
+          <div>Custom Router Address:</div>
+          <input
+            id="input-router-address"
+            class="h-10 w-full rounded-lg border-0 px-4 text-black"
+          />
+        </div>
+      </div>
+
+      <!-- Resolve Domain → Address (on submit) -->
+      <div class="flex w-full max-w-lg flex-col gap-5 text-center">
+        <input
+          id="input-1"
+          value="domains.tzero"
+          class="h-10 w-full rounded-lg border-0 px-4 text-black"
+        />
+        <button
+          id="button-1"
+          class="h-10 whitespace-nowrap rounded-lg bg-white/10 font-semibold hover:bg-white/20"
+        >
+          Domain → Address
+        </button>
+        <div id="result-1" class="text-gray-400"></div>
+      </div>
+
+      <!-- Resolve Address → Primary Domain (on submit) -->
+      <div class="flex w-full max-w-lg flex-col gap-5 text-center">
+        <input
+          id="input-2"
+          value="5EFJEY4DG2FnzcuCZpnRjjzT4x7heeEXuoYy1yAoUmshEhAP"
+          class="h-10 w-full rounded-lg border-0 px-4 text-black"
+        />
+        <button
+          id="button-2"
+          class="h-10 whitespace-nowrap rounded-lg bg-white/10 font-semibold hover:bg-white/20"
+        >
+          Address → Primary Domains
+        </button>
+        <div id="result-2" class="text-white/50"></div>
+      </div>
+    </main>
+
+    <script type="module" src="/index.ts"></script>
+  </body>
+</html>
